@@ -1,6 +1,6 @@
 def carica_da_file(file_path):
     """Carica le foto dal file, creando un nuovo anno ogni volta che compare per la prima volta"""
-    album = []
+    album = []    # Album è una lista di dizionari
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             header = f.readline()
@@ -37,7 +37,7 @@ def aggiungi_foto(album, codice, titolo, autore, mese, anno, file_path):
 
     try:
         with open(file_path, "a", encoding="utf-8") as f:
-            f.write(f"{codice},{titolo},{autore},{mese},{anno}\n")   # Aggiorno il file in coda con "a" append
+            f.write(f"{codice}, {titolo}, {autore}, {mese}, {anno}\n")   # Aggiorno il file in coda con "a" append
     except FileNotFoundError:
         return None  # File non trovato
 
